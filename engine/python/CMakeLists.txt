@@ -6,6 +6,6 @@ pybind11_add_module(KCE
 
 # Links
 target_link_libraries(KCE
-    PUBLIC
+    PRIVATE
         window
 )

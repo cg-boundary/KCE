@@ -8,13 +8,13 @@ add_library(window
 # Includes
 target_include_directories(window
     PUBLIC
-        "${CMAKE_CURRENT_SOURCE_DIR}/include"
+        "${CMAKE_CURRENT_SOURCE_DIR}/"
 )
 
 # Links
 target_link_libraries(window
     PUBLIC
-        pybind11
+        pybind11::module
         glad
         glfw
 )

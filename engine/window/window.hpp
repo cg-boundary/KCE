@@ -1,10 +1,8 @@
 #pragma once
 #include <iostream>
-#include <pybind11/pybind11.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <GLFW/glfw3.h>
-
+#include <pybind11/pybind11.h>
 namespace py = pybind11;
 
 
