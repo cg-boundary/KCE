@@ -3,8 +3,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <pybind11/pybind11.h>
-
 namespace py = pybind11;
+
+#include "renderer.hpp"
+
 
 namespace KenzoCG {
 
@@ -23,6 +25,7 @@ namespace KenzoCG {
         void draw_2d();
 
         GLFWwindow* window = nullptr;
+        std::unique_ptr<KenzoCG::Renderer> renderer;
         int width;
         int height;
         const char* title;

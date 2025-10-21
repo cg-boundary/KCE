@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
 
-#include <glm/glm.hpp>
 #include <glad/glad.h>
+#include <glm/glm.hpp>
 
 
-namespace Kenzo::Draw {
+namespace KenzoCG {
 
     class Shader {
     public:

@@ -5,11 +5,11 @@ https://github.com/Dav1dde/glad
 # Glfw
 git submodule add https://github.com/glfw/glfw.git extern/glfw
 
-# Glm
-git submodule add https://github.com/g-truc/glm.git extern/glm
-
 # ImGui
 git submodule add https://github.com/ocornut/imgui.git extern/imgui
+
+# Glm
+git submodule add https://github.com/g-truc/glm.git extern/glm
 
 # PyBind11
 git submodule add https://github.com/pybind/pybind11.git extern/pybind11

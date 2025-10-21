@@ -14,8 +14,17 @@ target_include_directories(window
 # Links
 target_link_libraries(window
     PUBLIC
-        pybind11::module
+        # External
         glad
         glfw
         imgui
+        pybind11::module
+        # Internal
+        draw
+)
+
+# C++ Version
+target_compile_features(window
+    PRIVATE
+        cxx_std_20
 )

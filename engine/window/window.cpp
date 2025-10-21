@@ -76,6 +76,12 @@ namespace KenzoCG {
             throw std::runtime_error("Failed to initialize ImGui OpenGL backend");
             return;
         }
+        // Renderer
+        this->renderer = std::make_unique<KenzoCG::Renderer>();
+        if (!this->renderer->setup()) {
+            throw std::runtime_error("Failed to setup Renderer");
+            return;
+        }
     }
 
     // Destroy

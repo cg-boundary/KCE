@@ -10,12 +10,6 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
 add_subdirectory(glfw)
 
-# GLM
-set(GLM_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-set(GLM_BUILD_LIBRARY ON CACHE BOOL "" FORCE)
-set(GLM_ENABLE_CXX_20 ON CACHE BOOL "" FORCE)
-add_subdirectory(glm)
-
 # IMGUI
 add_library(imgui
     STATIC
@@ -37,6 +31,12 @@ target_link_libraries(imgui
         glad
         glfw
 )
+
+# GLM
+set(GLM_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLM_BUILD_LIBRARY ON CACHE BOOL "" FORCE)
+set(GLM_ENABLE_CXX_17 ON CACHE BOOL "" FORCE)
+add_subdirectory(glm)
 
 # PyBind11
 add_subdirectory(pybind11)

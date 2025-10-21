@@ -1,5 +1,12 @@
-# Window Static
+
+# Utils
+add_subdirectory(utils)
+
+# Draw
+add_subdirectory(draw)
+
+# Window
 add_subdirectory(window)
 
-# Python Module
+# Python
 add_subdirectory(python)
