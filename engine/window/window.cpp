@@ -94,11 +94,10 @@ namespace KenzoCG {
             this->prev_time = current_time;
             // Update
             update();
-            // Start ImGui frame
+            // ImGui Setup
             ImGui_ImplOpenGL3_NewFrame();
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
-            // Example UI
             ImGui::Begin("Interface");
             ImGui::Text("Frame time: %.3f ms (%.1f FPS)", this->delta_time * 1000.0f, 1.0f / this->delta_time);
             ImGui::End();
@@ -109,6 +108,9 @@ namespace KenzoCG {
             draw_3d();
             // 2D
             draw_2d();
+            // Imgui
+            ImGui::Render();
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
             // Swap
             glfwSwapBuffers(this->window);
             // Events
