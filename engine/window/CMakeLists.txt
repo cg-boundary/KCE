@@ -17,4 +17,5 @@ target_link_libraries(window
         pybind11::module
         glad
         glfw
+        imgui
 )
