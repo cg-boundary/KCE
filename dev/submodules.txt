@@ -1,0 +1,9 @@
+
+# PyBind11
+git submodule add https://github.com/pybind/pybind11.git extern/pybind11
+
+# GLFW
+git submodule add https://github.com/glfw/glfw.git extern/glfw
+
+# UPDATE
+git submodule update --init --recursive

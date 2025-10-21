@@ -1,0 +1,5 @@
+
+# SETUP COMMAND - Copy the module to the python site-packages
+    1) cd dev
+    2) .\setup.bat
+
