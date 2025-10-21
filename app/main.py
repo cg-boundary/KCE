@@ -43,16 +43,29 @@ def load_module(name='', debug=True):
     return None
 
 # ------------------------------------------------------------------------------- #
+# CALLBACKS
+# ------------------------------------------------------------------------------- #
+
+def update():
+    pass
+
+
+def draw_3d():
+    pass
+
+
+def draw_2d():
+    pass
+
+# ------------------------------------------------------------------------------- #
 # MAIN
 # ------------------------------------------------------------------------------- #
 
 def main():
     KCE = load_module(name='KCE', debug=True)
-    if KCE is None:
+    if not KCE:
         return
-    window = KCE.Window(600, 800, "KCE")
-    if window:
-        window.update()
+    window = KCE.Window(600, 800, "KenzoCG-Engine")
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 # Lib
 add_library(window
     STATIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/source/window.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/window.cpp
 )
 
 # Includes
@@ -14,6 +14,7 @@ target_include_directories(window
 # Links
 target_link_libraries(window
     PUBLIC
+        pybind11
         glad
         glfw
 )

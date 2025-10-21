@@ -2,8 +2,11 @@
 # PyBind11
 git submodule add https://github.com/pybind/pybind11.git extern/pybind11
 
-# GLFW
+# Glfw
 git submodule add https://github.com/glfw/glfw.git extern/glfw
 
-# UPDATE
+# Glad
+https://github.com/Dav1dde/glad
+
+# Commands
 git submodule update --init --recursive

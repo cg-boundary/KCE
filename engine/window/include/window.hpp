@@ -1,7 +1,11 @@
 #pragma once
 #include <iostream>
+#include <pybind11/pybind11.h>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <GLFW/glfw3.h>
+
+namespace py = pybind11;
 
 
 namespace KenzoCG {
@@ -9,14 +13,14 @@ namespace KenzoCG {
         public:
             Window(int width, int height, const char* title);
             ~Window(void);
-        private:
-            GLFWwindow* _window = nullptr;
-            bool running(void);
+            GLFWwindow* window = nullptr;
+            int width;
+            int height;
+            const char* title;
+            void run(void);
+            void close(void);
             void update(void);
-            void clear(void);
-            void swap(void);
-            bool close(void);
-            void draw_2d(void);
             void draw_3d(void);
+            void draw_2d(void);
     };
 }
