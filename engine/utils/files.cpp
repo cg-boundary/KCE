@@ -1,3 +1,9 @@
+#include <string>
+#include <filesystem>
+#include <fstream>
+#include <sstream>
+#include <stdexcept>
+
 #include "files.hpp"
 
 
