@@ -1,10 +1,7 @@
 #include <string>
-#include <filesystem>
-#include <iostream>
 
-#include "renderer.hpp"
-#include "shader.hpp"
 #include "files.hpp"
+#include "renderer.hpp"
 
 
 namespace KenzoCG {

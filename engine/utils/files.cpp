@@ -1,15 +1,25 @@
+
+#include "files.hpp"
+
 #include <string>
 #include <filesystem>
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
 
-#include "files.hpp"
-
+#ifdef _WIN32
+#include <windows.h>
+#elif defined(__linux__)
+#include <unistd.h>
+#elif defined(__APPLE__)
+#include <mach-o/dyld.h>
+#else
+#error "Unsupported operating system"
+#endif
 
 namespace KenzoCG {
 
-    std::filesystem::path get_binary_directory(void) {
+    std::filesystem::path getBinaryDirectory() {
         std::filesystem::path exePath;
 
     #ifdef _WIN32
@@ -43,17 +53,17 @@ namespace KenzoCG {
         return exePath.parent_path();
     }
 
-    std::filesystem::path get_resources_directory(void) {
-        std::filesystem::path resourcesDir = get_binary_directory() / "resources";
+    std::filesystem::path getResourcesDirectory() {
+        std::filesystem::path resourcesDir = getBinaryDirectory() / "resources";
         return resourcesDir.make_preferred();
     }
 
-    std::filesystem::path get_shaders_directory(void) {
-        std::filesystem::path resourcesDir = get_binary_directory() / "resources" / "shaders";
+    std::filesystem::path getShadersDirectory() {
+        std::filesystem::path resourcesDir = getBinaryDirectory() / "resources" / "shaders";
         return resourcesDir.make_preferred();
     }
 
-    std::string get_file_content(const std::string& filePath) {
+    std::string getFileContent(const std::string& filePath) {
         // Normalize the file path for the current OS
         std::filesystem::path normalizedPath = std::filesystem::path(filePath).make_preferred();
         
@@ -87,10 +97,10 @@ namespace KenzoCG {
         return buffer.str();
     }
 
-    std::string get_shader_content(const std::string& fileName) {
-        std::filesystem::path shaderDirectory = get_shaders_directory();
+    std::string getShaderContent(const std::string& fileName) {
+        std::filesystem::path shaderDirectory = getShadersDirectory();
         std::string filePath = (shaderDirectory / fileName).make_preferred().string();
-        return get_file_content(filePath);
+        return getFileContent(filePath);
     }
 
 } // Namespace - KenzoCG
