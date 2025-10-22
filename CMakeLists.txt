@@ -21,10 +21,5 @@ add_subdirectory(engine)
 
 # Resources
 foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
-    file(
-        COPY
-            ${CMAKE_CURRENT_SOURCE_DIR}/resources
-        DESTINATION
-            ${CMAKE_BINARY_DIR}/${OUTPUTCONFIG}
-    )
+    file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/resources DESTINATION ${CMAKE_BINARY_DIR}/${OUTPUTCONFIG})
 endforeach()
